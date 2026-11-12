@@ -1,0 +1,12 @@
+services:
+  daily-briefing:
+    build:
+      context: .
+    container_name: daily-briefing
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
